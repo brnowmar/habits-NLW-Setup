@@ -10,17 +10,15 @@ function add() {
   const dayExists = nlwSetup.dayExists(today)
 
   if (dayExists) {
-    alert("Dia já adicionado 🔴")
+    alert("Dia já adicionado, tente denovo amanhã. 🔴")
     return
   }
-
   nlwSetup.addDay(today)
 }
 
 function save() {
   localStorage.setItem("NLWSetup@habits", JSON.stringify(nlwSetup.data))
 }
-
 const data = JSON.parse(localStorage.getItem("NLWSetup@habits")) || {}
 nlwSetup.setData(data)
 nlwSetup.load()
